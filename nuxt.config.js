@@ -15,11 +15,17 @@ export default {
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
-
-  // Global CSS: https://go.nuxtjs.dev/config-css
+  /*
+   ** Customize the progress-bar color
+   */
+  loading: { color: '#fff' },
+  /*
+   ** Global CSS
+   */
   css: [],
-
-  // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
+  /*
+   ** Plugins to load before mounting the App
+   */
   plugins: [],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -32,10 +38,27 @@ export default {
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
   ],
-
-  // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [],
-
-  // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
+  /*
+   ** Nuxt.js modules
+   */
+  modules: ['nuxt-svg-loader'],
+  purgeCSS: {
+    whitelist: ['hidden'],
+    whitelistPatterns: [/md:w-[1-6]/]
+  },
+  /*
+   ** Build configuration
+   */
+  build: {
+    /*
+     ** You can extend webpack config here
+     */
+    extend(config, ctx) {
+      loaders: {
+        file: {
+          esModule: false
+        }
+      }
+    }
+  }
 }
