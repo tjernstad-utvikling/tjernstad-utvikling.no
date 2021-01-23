@@ -13,8 +13,8 @@ import TheFooter from '@/components/TheFooter.vue'
 export default {
   components: {
     'the-header': TheHeader,
-    'the-footer': TheFooter
-  }
+    'the-footer': TheFooter,
+  },
 }
 </script>
 
@@ -32,7 +32,7 @@ html {
 }
 
 .gradient {
-  /* background: linear-gradient(90deg, #6200ee 0%, #03dac5 100%);  */
-  background: linear-gradient(90deg, #d53369 0%, #daae51 100%);
+  background: linear-gradient(90deg, #89a891 0%, #1a4d27 100%);
+  /* background: linear-gradient(90deg, #d53369 0%, #daae51 100%); */
 }
 </style>

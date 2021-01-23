@@ -1,3 +1,5 @@
+/* eslint-disable no-labels */
+/* eslint-disable no-unused-expressions */
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
@@ -6,7 +8,7 @@ export default {
   head: {
     title: 'tjernstad-utvikling',
     htmlAttrs: {
-      lang: 'en',
+      lang: 'no',
     },
     meta: [
       { charset: 'utf-8' },
@@ -44,7 +46,7 @@ export default {
   modules: ['nuxt-svg-loader'],
   purgeCSS: {
     whitelist: ['hidden'],
-    whitelistPatterns: [/md:w-[1-6]/]
+    whitelistPatterns: [/md:w-[1-6]/],
   },
   /*
    ** Build configuration
@@ -53,12 +55,12 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {
+    extend(_config, _ctx) {
       loaders: {
         file: {
           esModule: false
         }
       }
-    }
-  }
+    },
+  },
 }

@@ -15,13 +15,12 @@
         headline="Lorem ipsum dolor sit amet"
         content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at ipsum eu nunc commodo posuere et sit amet ligula."
       >
-        <img src="~assets/img/travel-booking.svg?inline" alt slot="svg" />
+        <img slot="svg" src="~assets/img/travel-booking.svg?inline" alt />
       </feature-right>
       <feature-left
         headline="Lorem ipsum dolor sit amet"
         content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at ipsum eu nunc commodo posuere et sit amet ligula."
       >
-        <img src="~assets/img/connected-world.svg?inline" alt slot="svg" />
       </feature-left>
     </div>
   </section>
@@ -35,7 +34,7 @@ export default {
   name: 'Features',
   components: {
     'feature-right': FeatureRight,
-    'feature-left': FeatureLeft
-  }
+    'feature-left': FeatureLeft,
+  },
 }
 </script>
