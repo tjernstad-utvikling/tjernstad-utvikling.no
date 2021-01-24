@@ -44,7 +44,7 @@
 </template>
 
 <script>
-import HeroContent from '@/components/section/HeroContent'
+import HeroContent from '@/components/sections/HeroContent'
 
 export default {
   name: 'Hero',

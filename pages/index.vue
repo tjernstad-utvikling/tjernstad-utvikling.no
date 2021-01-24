@@ -1,28 +1,26 @@
 <template>
   <div>
-    <hero />
-    <features />
-    <teasers />
-    <prices />
-    <call-to-action />
+    <landing :page="page" />
   </div>
 </template>
 
 <script>
-import Hero from '@/components/pages/Hero'
-import Features from '@/components/Features'
-import Teasers from '@/components/Teasers'
-import Prices from '@/components/Prices'
-import CallToAction from '@/components/CallToAction'
+import Landing from '@/components/pages/landing'
+import sanityClient from '@/sanityClient'
+
+const query = `
+  {
+    "page": *[_id == "fa241220-23b0-467f-885f-0975bf4f467e"][0]
+  }
+`
 
 export default {
   name: 'LandingPage',
   components: {
-    hero: Hero,
-    features: Features,
-    teasers: Teasers,
-    prices: Prices,
-    'call-to-action': CallToAction,
+    landing: Landing,
+  },
+  async asyncData() {
+    return await sanityClient.fetch(query)
   },
 }
 </script>
