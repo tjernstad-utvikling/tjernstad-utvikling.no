@@ -3,10 +3,12 @@
         "Fjerne",
         "Gyldig",
         "Inspeksjon",
+        "Parens",
         "Stickable",
         "kontroll",
         "nuxt",
         "nuxtjs",
+        "prettierrc",
         "tailwindcss",
         "vuedraggable"
     ]

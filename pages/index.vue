@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import Hero from '@/components/Hero'
+import Hero from '@/components/pages/Hero'
 import Features from '@/components/Features'
 import Teasers from '@/components/Teasers'
 import Prices from '@/components/Prices'
@@ -22,7 +22,7 @@ export default {
     features: Features,
     teasers: Teasers,
     prices: Prices,
-    'call-to-action': CallToAction
-  }
+    'call-to-action': CallToAction,
+  },
 }
 </script>

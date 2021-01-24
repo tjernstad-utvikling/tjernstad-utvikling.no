@@ -44,12 +44,12 @@
 </template>
 
 <script>
-import HeroContent from '@/components/HeroContent'
+import HeroContent from '@/components/section/HeroContent'
 
 export default {
   name: 'Hero',
   components: {
-    'hero-content': HeroContent
-  }
+    'hero-content': HeroContent,
+  },
 }
 </script>
