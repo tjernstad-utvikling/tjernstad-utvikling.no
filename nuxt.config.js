@@ -39,6 +39,7 @@ export default {
     '@nuxt/typescript-build',
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
+    '@nuxtjs/sanity'
   ],
   /*
    ** Nuxt.js modules
