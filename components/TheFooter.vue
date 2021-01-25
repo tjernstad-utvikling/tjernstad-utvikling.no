@@ -6,109 +6,28 @@
           <logo />
         </div>
 
-        <div class="flex-1">
-          <p class="uppercase text-gray-500 md:mb-6">Links</p>
+        <div
+          v-for="section in footer.sections"
+          :key="section._key"
+          class="flex-1"
+        >
+          <p class="uppercase text-gray-500 md:mb-6">{{ section.heading }}</p>
           <ul class="list-reset mb-6">
-            <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+            <li
+              v-for="item in section.section"
+              :key="item._key"
+              class="mt-2 inline-block mr-2 md:block md:mr-0"
+            >
               <a
-                href="#"
+                :href="item.url.href"
                 class="no-underline hover:underline text-gray-800 hover:text-orange-500"
-                >FAQ</a
-              >
-            </li>
-            <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-              <a
-                href="#"
-                class="no-underline hover:underline text-gray-800 hover:text-orange-500"
-                >Help</a
-              >
-            </li>
-            <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-              <a
-                href="#"
-                class="no-underline hover:underline text-gray-800 hover:text-orange-500"
-                >Support</a
-              >
-            </li>
-          </ul>
-        </div>
-        <div class="flex-1">
-          <p class="uppercase text-gray-500 md:mb-6">Legal</p>
-          <ul class="list-reset mb-6">
-            <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-              <a
-                href="#"
-                class="no-underline hover:underline text-gray-800 hover:text-orange-500"
-                >Terms</a
-              >
-            </li>
-            <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-              <a
-                href="#"
-                class="no-underline hover:underline text-gray-800 hover:text-orange-500"
-                >Privacy</a
-              >
-            </li>
-          </ul>
-        </div>
-        <div class="flex-1">
-          <p class="uppercase text-gray-500 md:mb-6">Social</p>
-          <ul class="list-reset mb-6">
-            <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-              <a
-                href="#"
-                class="no-underline hover:underline text-gray-800 hover:text-orange-500"
-                >Facebook</a
-              >
-            </li>
-            <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-              <a
-                href="#"
-                class="no-underline hover:underline text-gray-800 hover:text-orange-500"
-                >Linkedin</a
-              >
-            </li>
-            <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-              <a
-                href="#"
-                class="no-underline hover:underline text-gray-800 hover:text-orange-500"
-                >Twitter</a
-              >
-            </li>
-          </ul>
-        </div>
-        <div class="flex-1">
-          <p class="uppercase text-gray-500 md:mb-6">Company</p>
-          <ul class="list-reset mb-6">
-            <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-              <a
-                href="#"
-                class="no-underline hover:underline text-gray-800 hover:text-orange-500"
-                >Official Blog</a
-              >
-            </li>
-            <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-              <a
-                href="#"
-                class="no-underline hover:underline text-gray-800 hover:text-orange-500"
-                >About Us</a
-              >
-            </li>
-            <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-              <a
-                href="#"
-                class="no-underline hover:underline text-gray-800 hover:text-orange-500"
-                >Contact</a
+                >{{ item.label }}</a
               >
             </li>
           </ul>
         </div>
       </div>
     </div>
-
-    <a href="https://www.freepik.com/free-photos-vectors/background"
-      >Background vector created by freepik - www.freepik.com</a
-    >
   </footer>
 </template>
 
@@ -118,7 +37,15 @@ import Logo from '@/components/Logo'
 export default {
   name: 'TheFooter',
   components: {
-    logo: Logo
-  }
+    logo: Logo,
+  },
+  props: {
+    footer: {
+      type: Object,
+      default: () => {
+        return {}
+      },
+    },
+  },
 }
 </script>
