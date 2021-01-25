@@ -1,6 +1,6 @@
 <template>
   <div>
-    <hero-content />
+    <hero-content :section="section" />
     <div class="relative -mt-12 lg:-mt-24">
       <svg
         viewBox="0 0 1428 174"
@@ -23,8 +23,8 @@
               opacity="0.100000001"
             />
             <path
-              d="M1046,51.6521276 C1130.83045,29.328812 1279.08318,17.607883 1439,40.1656806 L1439,120 C1271.17211,77.9435312 1140.17211,55.1609071 1046,51.6521276 Z"
               id="Path-4"
+              d="M1046,51.6521276 C1130.83045,29.328812 1279.08318,17.607883 1439,40.1656806 L1439,120 C1271.17211,77.9435312 1140.17211,55.1609071 1046,51.6521276 Z"
               opacity="0.200000003"
             />
           </g>
@@ -50,6 +50,14 @@ export default {
   name: 'Hero',
   components: {
     'hero-content': HeroContent,
+  },
+  props: {
+    section: {
+      type: Object,
+      default: () => {
+        return {}
+      },
+    },
   },
 }
 </script>

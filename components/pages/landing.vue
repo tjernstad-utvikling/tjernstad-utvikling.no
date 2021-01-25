@@ -1,39 +1,24 @@
 <template>
   <div>
-    <hero />
-    <features />
-    <teasers />
-    <prices />
-    <call-to-action />
+    <template v-for="section in page.content">
+      <component :is="section._type" :key="section._key" :section="section" />
+    </template>
   </div>
 </template>
 
 <script>
-import Hero from '@/components/sections/Hero'
-import Features from '@/components/Features'
-import Teasers from '@/components/Teasers'
-import Prices from '@/components/Prices'
-import CallToAction from '@/components/CallToAction'
+import * as sections from '@/components/sections'
 
 export default {
   name: 'LandingPage',
-  components: {
-    hero: Hero,
-    features: Features,
-    teasers: Teasers,
-    prices: Prices,
-    'call-to-action': CallToAction,
-  },
+  components: { ...sections },
   props: {
     page: {
       type: Object,
       default: () => {
-        return { name: 'This event' }
+        return {}
       },
     },
-  },
-  created() {
-    console.log(this.page);
-  },
+  }
 }
 </script>
