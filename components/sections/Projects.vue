@@ -19,9 +19,9 @@
         >
           <SanityContent slot="content" :blocks="projectSection.text" />
           <img
+            v-if="projectSection.image !== undefined"
             slot="img"
             :src="$urlFor(projectSection.image)"
-            class="w-full md:w-4/5 z-50"
             loading="lazy"
             :alt="projectSection.image.alt"
           />
@@ -33,9 +33,9 @@
         >
           <SanityContent slot="content" :blocks="projectSection.text" />
           <img
+            v-if="projectSection.image !== undefined"
             slot="img"
             :src="$urlFor(projectSection.image)"
-            class="w-full md:w-4/5 z-50"
             loading="lazy"
             :alt="projectSection.image.alt"
           />
