@@ -4,7 +4,7 @@
       class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2"
     >
       <div class="pl-4 flex items-center">
-        <logo :isStickable="true" :isSticky="isSticky" />
+        <logo :is-stickable="true" :is-sticky="isSticky" />
       </div>
       <div class="block lg:hidden pr-4">
         <button
@@ -26,7 +26,7 @@
         :class="navContentClassList"
         class="w-full flex-grow lg:flex lg:items-center lg:w-auto lg:block mt-2 lg:mt-0 bg-white lg:bg-transparent text-black p-4 lg:p-0 z-20"
       >
-        <ul class="list-reset lg:flex justify-end flex-1 items-center">
+        <!-- <ul class="list-reset lg:flex justify-end flex-1 items-center">
           <li class="mr-3">
             <a
               class="inline-block py-2 px-4 text-black font-bold no-underline"
@@ -54,7 +54,7 @@
           class="mx-auto lg:mx-0 hover:underline font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75"
         >
           Action
-        </button>
+        </button> -->
       </div>
     </div>
     <hr class="border-b border-gray-100 opacity-25 my-0 py-0" />
@@ -67,12 +67,12 @@ import Logo from '@/components/Logo'
 export default {
   name: 'TheHeader',
   components: {
-    logo: Logo
+    logo: Logo,
   },
   data() {
     return {
       scrollY: 0,
-      isOpen: false
+      isOpen: false,
     }
   },
   computed: {
@@ -91,7 +91,16 @@ export default {
         classList += ` hidden`
       }
       return classList
-    }
+    },
+  },
+  mounted() {
+    this.scrollY = window.scrollY
+    document.addEventListener('click', this.onClick)
+    document.addEventListener('scroll', this.onScroll)
+  },
+  beforeDestroy() {
+    document.removeEventListener('click', this.onClick, true)
+    document.removeEventListener('scroll', this.onScroll, true)
   },
   methods: {
     onClick() {
@@ -102,16 +111,7 @@ export default {
     },
     onToggleClick() {
       this.isOpen = !this.isOpen
-    }
+    },
   },
-  mounted() {
-    this.scrollY = window.scrollY
-    document.addEventListener('click', this.onClick)
-    document.addEventListener('scroll', this.onScroll)
-  },
-  beforeDestroy() {
-    document.removeEventListener('click', this.onClick, true)
-    document.removeEventListener('scroll', this.onScroll, true)
-  }
 }
 </script>

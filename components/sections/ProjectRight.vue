@@ -5,16 +5,11 @@
         {{ headline }}
       </h3>
       <p class="text-gray-600 mb-8">
-        {{ content }}
-        <br />
-        <br />Images from:
-        <a class="text-orange-500 underline" href="https://undraw.co/"
-          >undraw.co</a
-        >
+        <slot name="content" />
       </p>
     </div>
     <div class="w-full sm:w-1/2 p-6">
-      <slot name="svg" />
+      <slot name="img" />
     </div>
   </div>
 </template>
@@ -24,10 +19,6 @@ export default {
   name: 'FeatureRight',
   props: {
     headline: {
-      type: String,
-      required: false
-    },
-    content: {
       type: String,
       required: false
     }
