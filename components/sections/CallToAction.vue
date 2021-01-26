@@ -6,12 +6,12 @@
 </template>
 
 <script>
-import CallToActionContent from '@/components/CallToActionContent'
+import CallToActionContent from '@/components/sections/CallToActionContent'
 
 export default {
   name: 'CallToAction',
   components: {
-    'call-to-action-content': CallToActionContent
+    'call-to-action-content': CallToActionContent,
   }
 }
 </script>

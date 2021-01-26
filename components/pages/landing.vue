@@ -3,6 +3,7 @@
     <template v-for="section in page.content">
       <component :is="section._type" :key="section._key" :section="section" />
     </template>
+    <component :is="'cta'" />
   </div>
 </template>
 
