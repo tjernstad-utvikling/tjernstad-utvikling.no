@@ -6,23 +6,20 @@
           <logo />
         </div>
 
-        <div
-          v-for="section in footer.sections"
-          :key="section._key"
-          class="flex-1"
-        >
-          <p class="uppercase text-gray-500 md:mb-6">{{ section.heading }}</p>
-          <ul class="list-reset mb-6">
-            <li
-              v-for="item in section.section"
-              :key="item._key"
-              class="mt-2 inline-block mr-2 md:block md:mr-0"
-            >
-              <a
-                :href="item.url.href"
-                class="no-underline hover:underline text-gray-800 hover:text-orange-500"
-                >{{ item.label }}</a
-              >
+        <div class="flex-1">
+          <p class="text-gray-500 md:mb-6">Tjernstad Utvikling</p>
+          <ul class="text-gray-900 list-reset mb-6">
+            <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+              Sandervegen 590
+            </li>
+            <li class="mt-2 inline-block mr-2 md:block md:mr-0">2116 Sander</li>
+          </ul>
+        </div>
+        <div class="flex-1">
+          <p class="text-gray-500 md:mb-6">Tlf: 48 31 32 83</p>
+          <ul class="text-gray-900 list-reset mb-6">
+            <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+              Org. nr. 924 359 595
             </li>
           </ul>
         </div>
@@ -38,14 +35,6 @@ export default {
   name: 'TheFooter',
   components: {
     logo: Logo,
-  },
-  props: {
-    footer: {
-      type: Object,
-      default: () => {
-        return {}
-      },
-    },
   },
 }
 </script>

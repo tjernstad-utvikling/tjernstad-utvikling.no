@@ -12,11 +12,11 @@
           <SanityContent :blocks="section.tagline" />
         </h1>
 
-        <button
+        <!-- <button
           class="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full my-6 py-4 px-8 shadow-lg"
         >
           Subscribe
-        </button>
+        </button> -->
       </div>
       <!--Right Col-->
       <div class="w-full md:w-3/5 py-6 text-center">
