@@ -2,6 +2,7 @@
   <div class="leading-normal tracking-normal text-white gradient">
     <the-header />
     <nuxt />
+    <img src="~assets/img/wave-top.svg?inline" alt />
     <the-footer v-if="config" :footer="config.footer" />
   </div>
 </template>
