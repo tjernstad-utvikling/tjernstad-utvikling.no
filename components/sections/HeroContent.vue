@@ -44,9 +44,6 @@ export default {
         return {}
       },
     },
-  },
-  created() {
-    console.log(this.section)
-  },
+  }
 }
 </script>
