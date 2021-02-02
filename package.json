@@ -13,7 +13,7 @@
   "dependencies": {
     "@nuxt/typescript-runtime": "^2.0.1",
     "@nuxtjs/sanity": "^0.6.2",
-    "@sanity/client": "^2.1.4",
+    "@sanity/client": "^2.2.6",
     "@sanity/image-url": "^0.140.19",
     "core-js": "^3.8.2",
     "nuxt": "^2.14.12",
