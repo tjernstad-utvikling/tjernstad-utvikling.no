@@ -1293,10 +1293,10 @@
     consola "^2.15.0"
     eslint-webpack-plugin "^2.4.1"
 
-"@nuxtjs/sanity@^0.6.2":
-  version "0.6.2"
-  resolved "https://registry.yarnpkg.com/@nuxtjs/sanity/-/sanity-0.6.2.tgz#fb2af61254fc9429cda8f28c93f6faa13655d1bb"
-  integrity sha512-d/EgtWJRINl3pZHlShCZ81vJGTmwulIN0wccoRFqoo/lk3evX07JJA+lZQKpNmOxjexFHrhwi+V8u3aBPI3UbA==
+"@nuxtjs/sanity@^0.7.0":
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/sanity/-/sanity-0.7.0.tgz#8fe4a05f0b72614e0a9088b38e8881a32ca70ea0"
+  integrity sha512-5l3TeMeGDk0vsAyhxSRElGz9h1OPT+JgrK2zyYh5XoUrmxWMwZoLTwiUVHCYmeWdfnKAjFYvPsM1LAfzJRJiMA==
   dependencies:
     defu "3.2.2"
     upath "^2.0.1"
