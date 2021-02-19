@@ -15,7 +15,7 @@
     "@nuxtjs/sanity": "^0.7.0",
     "@sanity/client": "^2.2.6",
     "@sanity/image-url": "^0.140.20",
-    "core-js": "^3.8.2",
+    "core-js": "^3.9.0",
     "nuxt": "^2.14.12",
     "nuxt-svg-loader": "^1.2.0"
   },
