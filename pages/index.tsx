@@ -41,6 +41,9 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
+                <div className={styles.sectionContainer}>
+                    <div className={styles.sectionBox}>test</div>
+                </div>
             </DefaultLayout>
         </div>
     );

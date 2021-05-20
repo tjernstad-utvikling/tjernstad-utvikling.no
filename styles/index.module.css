@@ -38,6 +38,21 @@
     margin-bottom: 0.5rem;
 }
 
+.sectionContainer {
+    padding: 5rem 0;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.sectionBox {
+    width: 80%;
+    display: flex;
+    background-color: var(--light-background);
+    padding: 1.2rem;
+    border-radius: 6px;
+}
+
 @media (max-width: 700px) {
     .heroBox {
         flex-direction: column-reverse;
