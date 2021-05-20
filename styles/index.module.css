@@ -1,0 +1,18 @@
+.hero {
+    padding: 5rem 0;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.heroBox {
+    width: 80%;
+    display: flex;
+    background-color: beige;
+    padding: 1.2rem;
+    border-radius: 6px;
+}
+.heroImage {
+    width: 1000px;
+}
