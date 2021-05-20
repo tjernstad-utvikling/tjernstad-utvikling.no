@@ -1,16 +1,6 @@
 {
     "cSpell.words": [
-        "Fjerne",
-        "Gyldig",
-        "Inspeksjon",
-        "Parens",
-        "Sandervegen",
-        "Stickable",
-        "kontroll",
-        "nuxt",
-        "nuxtjs",
-        "prettierrc",
-        "tailwindcss",
-        "vuedraggable"
-    ]
+        "prosjekter"
+    ],
+    "git.ignoreLimitWarning": true
 }
