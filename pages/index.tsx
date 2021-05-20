@@ -1,12 +1,11 @@
-import { DefaultLayout } from "../layout/default";
-import styles from "../styles/Home.module.css";
+import { DefaultLayout } from '../layout/default';
 
 export default function Home() {
-  return (
-    <div className={styles.container}>
-      <DefaultLayout>
-        <h1>Min side</h1>
-      </DefaultLayout>
-    </div>
-  );
+    return (
+        <div>
+            <DefaultLayout>
+                <p>Min side</p>
+            </DefaultLayout>
+        </div>
+    );
 }
