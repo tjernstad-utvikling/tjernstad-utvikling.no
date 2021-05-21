@@ -32,6 +32,7 @@ export interface mainImage {
         _ref: string;
         _type: blockType.reference;
     };
+    caption: string;
 }
 
 export interface slug {

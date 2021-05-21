@@ -4,20 +4,21 @@ import BlockContent from '@sanity/block-content-to-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ProjectInterface } from '../contracts/project';
+import client from '../client';
 import styles from '../styles/index.module.css';
+import { useNextSanityImage } from 'next-sanity-image';
 
 type ProjectProps = {
     project: ProjectInterface;
 };
 export const Project = ({ project }: ProjectProps) => {
+    const imageProps = useNextSanityImage(client, project.mainImage);
     return (
         <article className={styles.projectBox}>
             <Image
-                src="/img/sluttkontroll.png"
                 layout="responsive"
-                width="1940"
-                height="896"
-                alt="Sluttkontroll.no"
+                {...imageProps}
+                alt={project.mainImage.caption}
             />
             <BadgeRow>
                 <Badge text="CSS" />
