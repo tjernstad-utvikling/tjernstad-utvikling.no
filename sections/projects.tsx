@@ -1,9 +1,10 @@
 import { Project } from '../components/project';
+import { ProjectInterface } from '../contracts/project';
 import styles from '../styles/index.module.css';
 
-type ProjectsProps = {
-    projects: any;
-};
+interface ProjectsProps {
+    projects: Array<ProjectInterface>;
+}
 export const Projects = ({ projects }: ProjectsProps) => {
     return (
         <div className={styles.sectionContainer}>

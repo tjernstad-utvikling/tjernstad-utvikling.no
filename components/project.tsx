@@ -2,10 +2,11 @@ import { Badge, BadgeRow } from './badges';
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { ProjectInterface } from '../contracts/project';
 import styles from '../styles/index.module.css';
 
 type ProjectProps = {
-    project: any;
+    project: ProjectInterface;
 };
 export const Project = ({ project }: ProjectProps) => {
     return (
@@ -22,7 +23,7 @@ export const Project = ({ project }: ProjectProps) => {
                 <Badge text="JavaScript" />
                 <Badge text="Vue" />
             </BadgeRow>
-            <TextBox title="Sluttkontroll.no">Kort om prosjektet</TextBox>
+            <TextBox title={project.title}>Kort om prosjektet</TextBox>
             <li key={project._id}>
                 <Link
                     href="/projects/[slug]"

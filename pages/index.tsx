@@ -1,11 +1,14 @@
 import { DefaultLayout } from '../layout/default';
 import { Hero } from '../sections/hero';
+import { ProjectInterface } from '../contracts/project';
 import { Projects } from '../sections/projects';
 import client from '../client';
 import groq from 'groq';
 
-export default function Index(props: any) {
-    const { projects = [] } = props;
+interface IndexProps {
+    projects: Array<ProjectInterface>;
+}
+export default function Index({ projects }: IndexProps) {
     console.log(projects);
     return (
         <div>
