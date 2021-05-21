@@ -1,5 +1,6 @@
 import { Badge, BadgeRow } from './badges';
 
+import BlockContent from '@sanity/block-content-to-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ProjectInterface } from '../contracts/project';
@@ -23,29 +24,34 @@ export const Project = ({ project }: ProjectProps) => {
                 <Badge text="JavaScript" />
                 <Badge text="Vue" />
             </BadgeRow>
-            <TextBox title={project.title}>Kort om prosjektet</TextBox>
-            <li key={project._id}>
-                <Link
-                    href="/projects/[slug]"
-                    as={`/projects/${project.slug.current}`}
-                >
-                    <a>{project.title}</a>
-                </Link>{' '}
-                ({new Date(project._updatedAt).toDateString()})
-            </li>
+            <TextBox
+                title={project.title}
+                slug={project.slug.current}
+                body={project.body}
+            />
         </article>
     );
 };
 
 type TextBoxProps = {
-    title: String;
-    children: String;
+    title: string;
+    slug: string;
+    body: Array<any>;
 };
-const TextBox = ({ title, children }: TextBoxProps) => {
+const TextBox = ({ title, body, slug }: TextBoxProps) => {
     return (
         <div>
-            <h2>- {title}</h2>
-            <p>{children}</p>
+            <h2>
+                {' '}
+                <Link href="/projects/[slug]" as={`/projects/${slug}`}>
+                    <a>- {title}</a>
+                </Link>
+            </h2>
+            <BlockContent
+                blocks={body}
+                projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
+                dataset={process.env.NEXT_PUBLIC_SANITY_DATASET}
+            />
         </div>
     );
 };
