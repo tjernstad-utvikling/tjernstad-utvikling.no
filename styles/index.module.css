@@ -47,10 +47,13 @@
 
 .sectionBox {
     width: 80%;
-    display: flex;
     background-color: var(--light-background);
     padding: 1.2rem;
     border-radius: 6px;
+}
+
+.sectionBox h1 {
+    text-align: center;
 }
 
 @media (max-width: 700px) {
