@@ -52,6 +52,16 @@
     border-radius: 6px;
 }
 
+.projectBox {
+    background-color: var(--light-2-background);
+    padding: 1.2rem;
+    border-radius: 6px;
+}
+
+.projectBox h2 {
+    font-size: 2.3rem;
+}
+
 .sectionBox h1 {
     text-align: center;
 }

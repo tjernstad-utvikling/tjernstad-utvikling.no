@@ -1,3 +1,4 @@
+import { Project } from '../components/project';
 import styles from '../styles/index.module.css';
 
 export const Projects = () => {
@@ -5,6 +6,7 @@ export const Projects = () => {
         <div className={styles.sectionContainer}>
             <div className={styles.sectionBox}>
                 <h1>Prosjekter</h1>
+                <Project />
             </div>
         </div>
     );

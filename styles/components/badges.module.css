@@ -1,0 +1,13 @@
+.badge {
+    padding: 5px;
+    padding-left: 8px;
+    padding-right: 8px;
+    background-color: var(--badge-tech-bg);
+    margin-right: 0.5rem;
+    color: var(--badge-tech-txt);
+}
+
+.badgeRow {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
