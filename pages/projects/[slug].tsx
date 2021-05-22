@@ -6,11 +6,11 @@ interface ProjectProps {
     slug: string;
     project: ProjectInterface;
 }
-export default function Project({}: ProjectProps) {
+export default function Project({ project }: ProjectProps) {
     return (
         <PostLayout>
             <article>
-                <h1>title</h1>
+                <h1>{project.title}</h1>
             </article>
         </PostLayout>
     );
