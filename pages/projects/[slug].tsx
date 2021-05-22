@@ -1,24 +1,33 @@
+import { PostLayout } from '../../layout/post';
+import { ProjectInterface } from '../../contracts/project';
 import client from '../../client';
 
-const Project = ({ query }: any) => {
+interface ProjectProps {
+    slug: string;
+    project: ProjectInterface;
+}
+export default function Project({}: ProjectProps) {
     return (
-        <article>
-            <h1>{query.slug}</h1>
-        </article>
+        <PostLayout>
+            <article>
+                <h1>title</h1>
+            </article>
+        </PostLayout>
     );
-};
+}
 
 Project.getInitialProps = async function (context: {
     query: { slug?: '' | undefined };
 }) {
     // It's important to default the slug so that it doesn't return "undefined"
     const { slug = '' } = context.query;
-    return await client.fetch(
-        `
+    return {
+        slug: slug,
+        project: await client.fetch(
+            `
     *[_type == "project" && slug.current == $slug][0]
   `,
-        { slug }
-    );
+            { slug }
+        )
+    };
 };
-
-export default Project;
