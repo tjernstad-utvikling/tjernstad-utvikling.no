@@ -11,7 +11,10 @@ export const Projects = ({ projects }: ProjectsProps) => {
             <div className={styles.sectionBox}>
                 <h1>Prosjekter</h1>
                 {projects.map(
-                    (project) => project.slug && <Project project={project} />
+                    (project) =>
+                        project.slug && (
+                            <Project key={project._id} project={project} />
+                        )
                 )}
             </div>
         </div>

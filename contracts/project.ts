@@ -1,26 +1,18 @@
 export interface ProjectInterface {
-    _createdAt: string;
     _id: string;
-    _rev: string;
-    _type: documentType.project;
-    _updatedAt: string;
-    author: authorRef;
+
+    author: string;
     body: Array<any>;
     mainImage: mainImage;
     publishedAt: string;
-    slug: slug;
+    slug: string;
     title: string;
-}
-
-export interface authorRef {
-    _ref: string;
-    _type: blockType.reference;
+    technologies: Array<string>;
 }
 
 export enum blockType {
     reference = 'reference',
-    image = 'image',
-    slug = 'slug'
+    image = 'image'
 }
 export enum documentType {
     project = 'project'
@@ -33,9 +25,4 @@ export interface mainImage {
         _type: blockType.reference;
     };
     caption: string;
-}
-
-export interface slug {
-    _type: blockType.slug;
-    current: string;
 }

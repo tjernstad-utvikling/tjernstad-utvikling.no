@@ -9,7 +9,6 @@ interface IndexProps {
     projects: Array<ProjectInterface>;
 }
 export default function Index({ projects }: IndexProps) {
-    console.log(projects);
     return (
         <div>
             <DefaultLayout>
@@ -23,6 +22,15 @@ export default function Index({ projects }: IndexProps) {
 
 Index.getInitialProps = async () => ({
     projects: await client.fetch(groq`
-      *[_type == "project" && publishedAt < now()]|order(publishedAt desc)
+      *[_type == "project" && publishedAt < now()]|order(publishedAt desc) {
+        body,
+        "name": author->name,
+        "technologies": technology[]->title,
+        _id,
+        publishedAt,
+        mainImage,
+        "slug": slug.current,
+        title
+        }
     `)
 });

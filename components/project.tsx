@@ -13,6 +13,7 @@ type ProjectProps = {
 };
 export const Project = ({ project }: ProjectProps) => {
     const imageProps = useNextSanityImage(client, project.mainImage);
+    console.log(project.technologies);
     return (
         <article className={styles.projectBox}>
             <Image
@@ -21,13 +22,14 @@ export const Project = ({ project }: ProjectProps) => {
                 alt={project.mainImage.caption}
             />
             <BadgeRow>
-                <Badge text="CSS" />
-                <Badge text="JavaScript" />
-                <Badge text="Vue" />
+                {project.technologies &&
+                    project.technologies.map((technology) => (
+                        <Badge text={technology} />
+                    ))}
             </BadgeRow>
             <TextBox
                 title={project.title}
-                slug={project.slug.current}
+                slug={project.slug}
                 body={project.body}
             />
         </article>
