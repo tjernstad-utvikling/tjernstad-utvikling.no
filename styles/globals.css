@@ -20,3 +20,23 @@ a {
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+.topNav {
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 1.5rem 2rem;
+    background-color: #eaeaea;
+    transition: top 500ms ease-in-out;
+}
+
+.topNav.scrollUp,
+.topNav:focus-within {
+    top: 0;
+}
+
+.topNav.scrollDown {
+    top: -100%;
+}
