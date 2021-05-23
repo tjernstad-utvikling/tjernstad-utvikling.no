@@ -21,5 +21,6 @@ export const ButtonOutline = ({
 };
 
 export enum ButtonColors {
+    primary = 'primary',
     secondary = 'secondary'
 }

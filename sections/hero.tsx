@@ -1,4 +1,5 @@
-import { ButtonOutline } from '../components/buttons';
+import { ButtonColors, ButtonOutline } from '../components/buttons';
+
 import Image from 'next/image';
 import styles from '../styles/index.module.css';
 
@@ -32,7 +33,9 @@ export const Hero = () => {
                         </p>
                     </div>
                     <nav>
-                        <ButtonOutline>Mine Prosjekter</ButtonOutline>
+                        <ButtonOutline href="#" color={ButtonColors.primary}>
+                            Mine Prosjekter
+                        </ButtonOutline>
                     </nav>
                 </div>
             </div>
