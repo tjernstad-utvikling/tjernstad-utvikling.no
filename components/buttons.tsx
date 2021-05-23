@@ -1,14 +1,22 @@
+import Link from 'next/link';
 import styles from '../styles/components/buttons.module.css';
 interface ButtonOutlineProps {
     children: String;
     color: ButtonColors;
+    href: string;
 }
-export const ButtonOutline = ({ children, color }: ButtonOutlineProps) => {
+export const ButtonOutline = ({
+    children,
+    color,
+    href
+}: ButtonOutlineProps) => {
     console.log(styles[color], color);
     return (
-        <a href="#" className={`${styles.outlineButton} ${styles[color]}`}>
-            {children}
-        </a>
+        <Link href={href}>
+            <a className={`${styles.outlineButton} ${styles[color]}`}>
+                {children}
+            </a>
+        </Link>
     );
 };
 
