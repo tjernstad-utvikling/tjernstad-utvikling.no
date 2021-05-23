@@ -23,9 +23,11 @@ export const Project = ({ project }: ProjectProps) => {
             />
             <BadgeRow>
                 {project.technologies &&
-                    project.technologies.map((technology) => (
-                        <Badge key={technology} text={technology} />
-                    ))}
+                    project.technologies
+                        .slice(0, 3)
+                        .map((technology) => (
+                            <Badge key={technology} text={technology} />
+                        ))}
             </BadgeRow>
             <TextBox
                 title={project.title}

@@ -77,4 +77,7 @@
     .heroText {
         flex-direction: column-reverse;
     }
+    .projectBox h2 {
+        font-size: 1.3rem;
+    }
 }
