@@ -7,7 +7,9 @@ html {
 
     --light-background: var(--light-goldenrod-yellow);
     --light-2-background: var(--key-lime);
+
     --nav-buttons: var(--purple-navy);
+    --secondary-btn: var(--key-lime);
 
     --badge-tech-bg: var(--purple-navy);
     --badge-tech-txt: var(--key-lime);

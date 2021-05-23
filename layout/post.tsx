@@ -1,3 +1,5 @@
+import { ButtonColors, ButtonOutline } from '../components/buttons';
+
 import Head from 'next/head';
 import { useEffect } from 'react';
 import { useScroll } from '../hooks/useScroll';
@@ -26,7 +28,7 @@ export const PostLayout = ({ children }: layoutProps) => {
                     <div>
                         <img
                             src="/img/tu-logo.svg"
-                            style={{ width: '100px', margin: 'auto' }}
+                            style={{ width: '150px', margin: 'auto' }}
                         />
                     </div>
                     <div
@@ -36,10 +38,9 @@ export const PostLayout = ({ children }: layoutProps) => {
                             marginBottom: 'auto'
                         }}
                     >
-                        <a href="">Link 1</a>
-                        <a href="">Link 2</a>
-                        <a href="">Link 3</a>
-                        <a href="">Link 4</a>
+                        <ButtonOutline color={ButtonColors.secondary}>
+                            Hjem
+                        </ButtonOutline>
                     </div>
                 </nav>
             </header>

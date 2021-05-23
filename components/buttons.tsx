@@ -1,11 +1,17 @@
 import styles from '../styles/components/buttons.module.css';
-type ButtonOutlineProps = {
+interface ButtonOutlineProps {
     children: String;
-};
-export const ButtonOutline = ({ children }: ButtonOutlineProps) => {
+    color: ButtonColors;
+}
+export const ButtonOutline = ({ children, color }: ButtonOutlineProps) => {
+    console.log(styles[color], color);
     return (
-        <a href="#" className={styles.outlineButton}>
+        <a href="#" className={`${styles.outlineButton} ${styles[color]}`}>
             {children}
         </a>
     );
 };
+
+export enum ButtonColors {
+    secondary = 'secondary'
+}
