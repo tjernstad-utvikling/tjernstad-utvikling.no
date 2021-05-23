@@ -1,3 +1,4 @@
+import BlockContent from '@sanity/block-content-to-react';
 import Image from 'next/image';
 import { PostLayout } from '../../layout/post';
 import { ProjectInterface } from '../../contracts/project';
@@ -22,8 +23,13 @@ export default function Project({ project }: ProjectProps) {
                         {...imageProps}
                         alt={project.mainImage.caption}
                     />
-                    <figcaption>{project.mainImage.caption}</figcaption>
+                    <figcaption>- {project.mainImage.caption}</figcaption>
                 </figure>
+                <BlockContent
+                    blocks={project.body}
+                    projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
+                    dataset={process.env.NEXT_PUBLIC_SANITY_DATASET}
+                />
             </article>
         </PostLayout>
     );
