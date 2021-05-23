@@ -1,16 +1,29 @@
+import Image from 'next/image';
 import { PostLayout } from '../../layout/post';
 import { ProjectInterface } from '../../contracts/project';
 import client from '../../client';
+import styles from '../../styles/project.module.css';
+import { useNextSanityImage } from 'next-sanity-image';
 
 interface ProjectProps {
     slug: string;
     project: ProjectInterface;
 }
 export default function Project({ project }: ProjectProps) {
+    const imageProps = useNextSanityImage(client, project.mainImage);
+
     return (
         <PostLayout>
-            <article>
+            <article className={styles.project}>
                 <h1>{project.title}</h1>
+                <figure>
+                    <Image
+                        layout="responsive"
+                        {...imageProps}
+                        alt={project.mainImage.caption}
+                    />
+                    <figcaption>{project.mainImage.caption}</figcaption>
+                </figure>
             </article>
         </PostLayout>
     );
