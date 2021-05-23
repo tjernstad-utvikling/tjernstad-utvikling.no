@@ -13,7 +13,7 @@ type ProjectProps = {
 };
 export const Project = ({ project }: ProjectProps) => {
     const imageProps = useNextSanityImage(client, project.mainImage);
-    console.log(project.technologies);
+
     return (
         <article className={styles.projectBox}>
             <Image

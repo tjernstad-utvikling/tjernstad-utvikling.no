@@ -10,7 +10,6 @@ export const ButtonOutline = ({
     color,
     href
 }: ButtonOutlineProps) => {
-    console.log(styles[color], color);
     return (
         <Link href={href}>
             <a className={`${styles.outlineButton} ${styles[color]}`}>
@@ -30,7 +29,6 @@ export const ButtonOutlineOnClick = ({
     color,
     onClick
 }: ButtonOutlineOnClickProps) => {
-    console.log(styles[color], color);
     return (
         <a
             href="#"
