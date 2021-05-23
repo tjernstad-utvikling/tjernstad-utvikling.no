@@ -22,7 +22,26 @@ export const PostLayout = ({ children }: layoutProps) => {
                     isScrollingDown ? 'scrollDown' : 'scrollUp'
                 }`}
             >
-                <nav>Bla bla bla</nav>
+                <nav>
+                    <div>
+                        <img
+                            src="/img/tu-logo.svg"
+                            style={{ width: '100px', margin: 'auto' }}
+                        />
+                    </div>
+                    <div
+                        style={{
+                            display: 'flex',
+                            marginTop: 'auto',
+                            marginBottom: 'auto'
+                        }}
+                    >
+                        <a href="">Link 1</a>
+                        <a href="">Link 2</a>
+                        <a href="">Link 3</a>
+                        <a href="">Link 4</a>
+                    </div>
+                </nav>
             </header>
             <main>{children}</main>
             <footer></footer>

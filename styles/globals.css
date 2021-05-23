@@ -24,12 +24,16 @@ a {
 .topNav {
     position: sticky;
     top: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 1.5rem 2rem;
+    z-index: 9;
+    padding-left: 1.2rem;
     background-color: #eaeaea;
     transition: top 500ms ease-in-out;
+}
+
+.topNav nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .topNav.scrollUp,
