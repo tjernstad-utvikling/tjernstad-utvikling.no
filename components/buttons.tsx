@@ -20,6 +20,28 @@ export const ButtonOutline = ({
     );
 };
 
+interface ButtonOutlineOnClickProps {
+    children: String;
+    color: ButtonColors;
+    onClick: () => void;
+}
+export const ButtonOutlineOnClick = ({
+    children,
+    color,
+    onClick
+}: ButtonOutlineOnClickProps) => {
+    console.log(styles[color], color);
+    return (
+        <a
+            href="#"
+            onClick={onClick}
+            className={`${styles.outlineButton} ${styles[color]}`}
+        >
+            {children}
+        </a>
+    );
+};
+
 export enum ButtonColors {
     primary = 'primary',
     secondary = 'secondary'

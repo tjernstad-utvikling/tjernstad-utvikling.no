@@ -8,7 +8,7 @@ interface ProjectsProps {
 export const Projects = ({ projects }: ProjectsProps) => {
     return (
         <div className={styles.sectionContainer}>
-            <div className={styles.sectionBox}>
+            <div id="project-section" className={styles.sectionBox}>
                 <h1>Prosjekter</h1>
                 {projects.map(
                     (project) =>

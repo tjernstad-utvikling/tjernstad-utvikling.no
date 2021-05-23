@@ -3,7 +3,8 @@ import { ButtonColors, ButtonOutline } from '../components/buttons';
 import Image from 'next/image';
 import styles from '../styles/index.module.css';
 
-export const Hero = () => {
+interface HeroProps {}
+export const Hero = ({}: HeroProps) => {
     return (
         <div className={styles.hero}>
             <div className={styles.heroBox}>
@@ -33,7 +34,10 @@ export const Hero = () => {
                         </p>
                     </div>
                     <nav>
-                        <ButtonOutline href="#" color={ButtonColors.primary}>
+                        <ButtonOutline
+                            href="/#project-section"
+                            color={ButtonColors.primary}
+                        >
                             Mine Prosjekter
                         </ButtonOutline>
                     </nav>
