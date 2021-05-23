@@ -1,8 +1,10 @@
+import { Badge } from '../../components/badges';
 import BlockContent from '@sanity/block-content-to-react';
 import Image from 'next/image';
 import { PostLayout } from '../../layout/post';
 import { ProjectInterface } from '../../contracts/project';
 import client from '../../client';
+import groq from 'groq';
 import styles from '../../styles/project.module.css';
 import { useNextSanityImage } from 'next-sanity-image';
 
@@ -25,11 +27,20 @@ export default function Project({ project }: ProjectProps) {
                     />
                     <figcaption>- {project.mainImage.caption}</figcaption>
                 </figure>
-                <BlockContent
-                    blocks={project.body}
-                    projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
-                    dataset={process.env.NEXT_PUBLIC_SANITY_DATASET}
-                />
+                <div style={{ display: 'flex' }}>
+                    <BlockContent
+                        blocks={project.body}
+                        projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
+                        dataset={process.env.NEXT_PUBLIC_SANITY_DATASET}
+                    />
+                    <aside style={{ width: '100px' }}>
+                        Prosjektet er utviklet med:
+                        {project.technologies &&
+                            project.technologies.map((technology) => (
+                                <Badge key={technology} text={technology} />
+                            ))}
+                    </aside>
+                </div>
             </article>
         </PostLayout>
     );
@@ -43,8 +54,17 @@ Project.getInitialProps = async function (context: {
     return {
         slug: slug,
         project: await client.fetch(
-            `
-    *[_type == "project" && slug.current == $slug][0]
+            groq`
+            *[_type == "project" && slug.current == $slug][0] {
+        body,
+        "name": author->name,
+        "technologies": technology[]->title,
+        _id,
+        publishedAt,
+        mainImage,
+        "slug": slug.current,
+        title
+        }
   `,
             { slug }
         )
