@@ -13,7 +13,7 @@ export const HeaderNavBar = () => {
                     <img src="/img/tu-logo.svg" style={{ width: '150px' }} />
                 </div>
                 <div style={{ paddingRight: '2rem' }}>
-                    <ButtonOutline color={ButtonColors.secondary}>
+                    <ButtonOutline href="/" color={ButtonColors.secondary}>
                         Hjem
                     </ButtonOutline>
                 </div>
