@@ -62,6 +62,10 @@
 .projectBox h2 {
     font-size: 2.3rem;
 }
+.projectBox:hover {
+    filter: brightness(0.6);
+    cursor: pointer;
+}
 
 .sectionBox h1 {
     text-align: center;

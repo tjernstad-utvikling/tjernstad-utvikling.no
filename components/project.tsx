@@ -7,15 +7,25 @@ import { ProjectInterface } from '../contracts/project';
 import client from '../client';
 import styles from '../styles/index.module.css';
 import { useNextSanityImage } from 'next-sanity-image';
+import { useRouter } from 'next/dist/client/router';
 
 type ProjectProps = {
     project: ProjectInterface;
 };
 export const Project = ({ project }: ProjectProps) => {
     const imageProps = useNextSanityImage(client, project.mainImage);
+    const router = useRouter();
 
     return (
-        <article className={styles.projectBox}>
+        <article
+            onClick={() => {
+                router.push({
+                    pathname: '/projects/[slug]',
+                    query: { slug: project.slug }
+                });
+            }}
+            className={styles.projectBox}
+        >
             <Image
                 layout="responsive"
                 {...imageProps}
