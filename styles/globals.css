@@ -14,6 +14,24 @@ a {
     text-decoration: none;
 }
 
+footer {
+    display: flex;
+    background-color: aliceblue;
+    justify-content: space-around;
+    height: 3rem;
+    border-top-width: 3px;
+    border-style: solid;
+    border-image: linear-gradient(
+            to left,
+            #fff,
+            rgba(94, 230, 128, 1),
+            rgba(69, 97, 135, 1),
+            rgba(94, 230, 128, 1),
+            #fff
+        )
+        100% 0;
+}
+
 .fullPageImage {
     background: url(/img/full-page-bg.jpg) no-repeat center center fixed;
     /* Full height */

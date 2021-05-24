@@ -1,3 +1,4 @@
+import { Footer } from './components/footer';
 import Head from 'next/head';
 import { useEffect } from 'react';
 
@@ -16,7 +17,7 @@ export const DefaultLayout = ({ children }: layoutProps) => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <main>{children}</main>
-            <footer></footer>
+            <Footer />
         </div>
     );
 };

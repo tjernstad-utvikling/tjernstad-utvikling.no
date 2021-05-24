@@ -1,3 +1,4 @@
+import { Footer } from './components/footer';
 import Head from 'next/head';
 import { HeaderNavBar } from './components/HeaderNavBar';
 import { useEffect } from 'react';
@@ -18,7 +19,7 @@ export const PostLayout = ({ children }: layoutProps) => {
             </Head>
             <HeaderNavBar />
             <main>{children}</main>
-            <footer></footer>
+            <Footer />
         </div>
     );
 };

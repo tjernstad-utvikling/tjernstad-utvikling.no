@@ -27,15 +27,17 @@
 .body aside {
     width: 600px;
     padding: 10px;
-    border-width: 3px;
+    border-left-width: 3px;
     border-style: solid;
     border-image: linear-gradient(
             to bottom,
+            #fff,
             rgba(94, 230, 128, 1),
             rgba(69, 97, 135, 1),
+            rgba(94, 230, 128, 1),
             #fff
         )
-        0 100%;
+        0 0 0 100%;
 }
 
 @media (max-width: 700px) {
