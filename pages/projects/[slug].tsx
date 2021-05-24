@@ -27,18 +27,20 @@ export default function Project({ project }: ProjectProps) {
                     />
                     <figcaption>- {project.mainImage.caption}</figcaption>
                 </figure>
-                <div style={{ display: 'flex' }}>
+                <div className={styles.body}>
                     <BlockContent
                         blocks={project.body}
                         projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
                         dataset={process.env.NEXT_PUBLIC_SANITY_DATASET}
                     />
-                    <aside style={{ width: '100px' }}>
+                    <aside>
                         Prosjektet er utviklet med:
-                        {project.technologies &&
-                            project.technologies.map((technology) => (
-                                <Badge key={technology} text={technology} />
-                            ))}
+                        <ul>
+                            {project.technologies &&
+                                project.technologies.map((technology) => (
+                                    <li key={technology}>{technology}</li>
+                                ))}
+                        </ul>
                     </aside>
                 </div>
             </article>

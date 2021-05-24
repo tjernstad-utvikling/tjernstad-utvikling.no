@@ -18,8 +18,36 @@
     font-size: 0.78rem;
 }
 
+.body {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.body aside {
+    width: 600px;
+    padding: 10px;
+    border-width: 3px;
+    border-style: solid;
+    border-image: linear-gradient(
+            to bottom,
+            rgba(94, 230, 128, 1),
+            rgba(69, 97, 135, 1),
+            #fff
+        )
+        0 100%;
+}
+
 @media (max-width: 700px) {
     .project h1 {
         font-size: max(4vw, 15px);
+    }
+
+    .body {
+        justify-items: center;
+        flex-direction: column;
+    }
+    .body aside {
+        width: auto;
     }
 }
