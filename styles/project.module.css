@@ -51,5 +51,14 @@
     }
     .body aside {
         width: auto;
+        border-image: linear-gradient(
+                to left,
+                #fff,
+                rgba(94, 230, 128, 1),
+                rgba(69, 97, 135, 1),
+                rgba(94, 230, 128, 1),
+                #fff
+            )
+            100% 0 0 0;
     }
 }
