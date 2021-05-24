@@ -1,0 +1,87 @@
+.hero {
+    padding: 5rem 0;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero h1 {
+    text-align: center;
+    font-size: 2.8rem;
+}
+
+.heroBox {
+    width: 80%;
+    display: flex;
+    background-color: var(--light-background);
+    padding: 1.2rem;
+    border-radius: 6px;
+}
+.heroImage {
+    width: 400px;
+}
+
+.heroText img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.heroText {
+    display: flex;
+    flex: 1;
+    padding-left: 1.2rem;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.heroText nav {
+    margin-bottom: 0.5rem;
+}
+
+.sectionContainer {
+    padding: 5rem 0;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.sectionBox {
+    width: 80%;
+    background-color: var(--light-background);
+    padding: 1.2rem;
+    border-radius: 6px;
+}
+
+.projectBox {
+    background-color: var(--light-2-background);
+    padding: 1.2rem;
+    border-radius: 6px;
+    margin-top: 2rem;
+}
+
+.projectBox h2 {
+    font-size: 2.3rem;
+}
+.projectBox:hover {
+    filter: brightness(0.6);
+    cursor: pointer;
+}
+
+.sectionBox h1 {
+    text-align: center;
+}
+
+@media (max-width: 700px) {
+    .heroBox {
+        flex-direction: column-reverse;
+    }
+    .heroImage {
+        width: 100%;
+    }
+    .heroText {
+        flex-direction: column-reverse;
+    }
+    .projectBox h2 {
+        font-size: 1.3rem;
+    }
+}

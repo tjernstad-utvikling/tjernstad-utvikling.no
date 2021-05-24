@@ -1,0 +1,89 @@
+html,
+body {
+    padding: 0;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+        Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+footer {
+    display: flex;
+    background-color: var(--light-goldenrod-yellow);
+    padding: 15px;
+    justify-content: space-around;
+    border-top-width: 3px;
+    border-style: solid;
+    border-image: linear-gradient(
+            to left,
+            #fff,
+            rgba(94, 230, 128, 1),
+            rgba(69, 97, 135, 1),
+            rgba(94, 230, 128, 1),
+            #fff
+        )
+        100% 0 0 0;
+}
+
+.footer-logo {
+    display: block;
+}
+
+.fullPageImage {
+    background: url(/img/full-page-bg.jpg) no-repeat center center fixed;
+    /* Full height */
+    height: 100vh;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.topNav {
+    position: sticky;
+    top: 0;
+    z-index: 9;
+    padding-left: 1.2rem;
+    background: rgb(31, 39, 51);
+    background: linear-gradient(
+        207deg,
+        rgba(31, 39, 51, 1) 0%,
+        rgba(69, 97, 135, 1) 38%,
+        rgba(94, 230, 128, 1) 100%
+    );
+    transition: top 500ms ease-in-out;
+}
+
+.topNav nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.topNav.scrollUp,
+.topNav:focus-within {
+    top: 0;
+}
+
+.topNav.scrollDown {
+    top: -100%;
+}
+
+@media (max-width: 700px) {
+    footer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-logo {
+        display: none;
+    }
+}

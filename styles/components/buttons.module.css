@@ -1,0 +1,27 @@
+.outlineButton {
+    border: 2px;
+    border-style: solid;
+    padding: 8px;
+    border-radius: 4;
+}
+
+.outlineButton {
+    color: var(--nav-buttons);
+    border-color: var(--nav-buttons);
+    font-weight: bold;
+}
+
+.outlineButton:hover {
+    background-color: var(--nav-buttons);
+    color: var(--light-background);
+}
+.outlineButton.secondary {
+    color: var(--secondary-btn);
+    border-color: var(--secondary-btn);
+    font-weight: bold;
+}
+
+.outlineButton.secondary:hover {
+    background-color: var(--secondary-btn);
+    color: var(--nav-buttons);
+}

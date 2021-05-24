@@ -1,0 +1,16 @@
+html {
+    --light-goldenrod-yellow: #faffd8ff;
+    --key-lime: #ecffb0ff;
+    --morning-blue: #9aa899ff;
+    --purple-navy: #54577cff;
+    --steel-blue: #4a7b9dff;
+
+    --light-background: var(--light-goldenrod-yellow);
+    --light-2-background: var(--key-lime);
+
+    --nav-buttons: var(--purple-navy);
+    --secondary-btn: var(--key-lime);
+
+    --badge-tech-bg: var(--purple-navy);
+    --badge-tech-txt: var(--key-lime);
+}
