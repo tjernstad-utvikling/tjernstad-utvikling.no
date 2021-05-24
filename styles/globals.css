@@ -16,9 +16,8 @@ a {
 
 footer {
     display: flex;
-    background-color: aliceblue;
+    background-color: var(--light-goldenrod-yellow);
     justify-content: space-around;
-    height: 3rem;
     border-top-width: 3px;
     border-style: solid;
     border-image: linear-gradient(
@@ -29,7 +28,7 @@ footer {
             rgba(94, 230, 128, 1),
             #fff
         )
-        100% 0;
+        100% 0 0 0;
 }
 
 .fullPageImage {
