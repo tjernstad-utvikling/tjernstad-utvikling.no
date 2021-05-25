@@ -1,4 +1,3 @@
-import { Badge } from '../../components/badges';
 import BlockContent from '@sanity/block-content-to-react';
 import Image from 'next/image';
 import { PostLayout } from '../../layout/post';
@@ -9,7 +8,6 @@ import styles from '../../styles/project.module.css';
 import { useNextSanityImage } from 'next-sanity-image';
 
 interface ProjectProps {
-    slug: string;
     project: ProjectInterface;
 }
 export default function Project({ project }: ProjectProps) {
@@ -48,15 +46,10 @@ export default function Project({ project }: ProjectProps) {
     );
 }
 
-Project.getInitialProps = async function (context: {
-    query: { slug?: '' | undefined };
-}) {
-    // It's important to default the slug so that it doesn't return "undefined"
-    const { slug = '' } = context.query;
-    return {
-        slug: slug,
-        project: await client.fetch(
-            groq`
+export async function getStaticProps(context) {
+    const { slug = '' } = context.params;
+    const project = await client.fetch(
+        groq`
             *[_type == "project" && slug.current == $slug][0] {
         body,
         "name": author->name,
@@ -68,7 +61,26 @@ Project.getInitialProps = async function (context: {
         title
         }
   `,
-            { slug }
-        )
+        { slug }
+    );
+    return {
+        props: { project } // will be passed to the page component as props
     };
-};
+}
+
+export async function getStaticPaths() {
+    const projects: Array<ProjectInterface> = await client.fetch(groq`
+      *[_type == "project" && publishedAt < now()]|order(publishedAt desc) {
+        "slug": slug.current,
+        }
+    `);
+
+    const paths = projects.map((project) => {
+        return { params: { slug: project.slug } };
+    });
+
+    return {
+        paths,
+        fallback: false
+    };
+}

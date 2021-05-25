@@ -20,8 +20,8 @@ export default function Index({ projects }: IndexProps) {
     );
 }
 
-Index.getInitialProps = async () => ({
-    projects: await client.fetch(groq`
+export async function getStaticProps() {
+    const projects = await client.fetch(groq`
       *[_type == "project" && publishedAt < now()]|order(publishedAt desc) {
         body,
         "name": author->name,
@@ -32,5 +32,8 @@ Index.getInitialProps = async () => ({
         "slug": slug.current,
         title
         }
-    `)
-});
+    `);
+    return {
+        props: { projects } // will be passed to the page component as props
+    };
+}
