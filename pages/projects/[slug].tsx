@@ -46,7 +46,9 @@ export default function Project({ project }: ProjectProps) {
     );
 }
 
-export async function getStaticProps(context) {
+export async function getStaticProps(context: {
+    params: { slug?: '' | undefined };
+}) {
     const { slug = '' } = context.params;
     const project = await client.fetch(
         groq`
